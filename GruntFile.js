@@ -179,7 +179,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-notify');
 
 	// Default task(s).
-	grunt.registerTask('default', ['sass', 'csslint', 'cssmin', 'jshint'/*, 'concat', 'uglify', 'notify:server', 'notify_hooks'*/, 'copy', 'watch']);
+	grunt.registerTask('default', ['sass', 'csslint', 'cssmin', 'jshint'/*, 'concat', 'uglify', 'notify:server'*/, 'copy', 'notify_hooks', 'watch']);
 
 	// This is required if you use any options.
 	grunt.task.run('notify_hooks');
