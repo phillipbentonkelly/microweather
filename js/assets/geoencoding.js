@@ -15,8 +15,15 @@ var geo = {
 			temp: '',
 			feelsLike: '',
 			windSpeed: '',
+			icon: ''
 		},
-
+		icons: {
+			partlyCloudyDay: 'wi-day-cloudy',
+			clearDay: 'wi-day-sunny',
+			rain: 'wi-umbrella',
+			partlyCloudyNight: 'wi-night-cloudy',
+			snow: 'wi-snow'
+		}
 	}
 };
 
@@ -65,8 +72,9 @@ geo.getLocation = function() {
 };
 
 // retrieves event weather info from latitude and longitude
-geo.getForcast = function(lat, lng, time) {
+geo.getForcast = function(lat, lng, timee) {
 	var reqUrl;
+	var time = Date.now();
 	if(time !== 'undefined') {
 		reqUrl = geo.apis.forcast.baseUrl + geo.apis.forcast.key + '/' + lat + ',' + lng + time;
 	} else {
@@ -89,13 +97,26 @@ geo.parseForcast = function(data) {
 	currentForcast.temp = data.currently.temperature;
 	currentForcast.feelsLike = data.currently.apparentTemperature;
 	currentForcast.windSpeed = data.currently.windSpeed;
+	currentForcast.icon = geo.getWeatherIcon(data.currently.icon);
 
 	console.log('summary', currentForcast.summary);
 	console.log('temp',currentForcast.temp);
 	console.log('feels like',currentForcast.feelsLike);
 	console.log('wind speed',currentForcast.windSpeed);	
+	console.log('weather icon',currentForcast.icon);
+
 };
 
+geo.getWeatherIcon = function(icon) {
+	for(var i = 0; i < Object.keys(geo.weather.icons).length; i++) {
+		console.log(Object.keys(geo.weather.icons)[i]);
+		// debugger;
+		// if(Object.keys(geo.weather.icons)[i] === 'partly-cloudy-day') {
+		// 	return geo.weather.icons[geo.weather.icons.keys[i]];
+		// }
+	}
+	return 'wi-day-sunny';
+};
 
 
 
