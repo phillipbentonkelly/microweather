@@ -18,11 +18,11 @@ var geo = {
 			icon: ''
 		},
 		icons: {
-			partlyCloudyDay: 'wi-day-cloudy',
-			clearDay: 'wi-day-sunny',
-			rain: 'wi-umbrella',
-			partlyCloudyNight: 'wi-night-cloudy',
-			snow: 'wi-snow'
+			'partly-cloudy-day': 'wi-day-cloudy',
+			'clear-day': 'wi-day-sunny',
+			'rain': 'wi-umbrella',
+			'partly-cloudy-night': 'wi-night-cloudy',
+			'snow': 'wi-snow'
 		}
 	}
 };
@@ -98,24 +98,27 @@ geo.parseForcast = function(data) {
 	currentForcast.feelsLike = data.currently.apparentTemperature;
 	currentForcast.windSpeed = data.currently.windSpeed;
 	currentForcast.icon = geo.getWeatherIcon(data.currently.icon);
+	// console.log('summary', currentForcast.summary);
+	// console.log('temp',currentForcast.temp);
+	// console.log('feels like',currentForcast.feelsLike);
+	// console.log('wind speed',currentForcast.windSpeed);	
+	// console.log('weather icon SHould be.....',data.currently.icon);
+	geo.displayForcast(currentForcast);
+};
 
-	console.log('summary', currentForcast.summary);
-	console.log('temp',currentForcast.temp);
-	console.log('feels like',currentForcast.feelsLike);
-	console.log('wind speed',currentForcast.windSpeed);	
-	console.log('weather icon',currentForcast.icon);
+geo.displayForcast = function(forcast) {
+	var homeTemp = $('.temperature').html(Math.floor(forcast.temp) + '&deg; F');
+	var homeWeatherIcon = $('.weather-icon').addClass(forcast.icon);
 
 };
 
 geo.getWeatherIcon = function(icon) {
 	for(var i = 0; i < Object.keys(geo.weather.icons).length; i++) {
 		console.log(Object.keys(geo.weather.icons)[i]);
-		// debugger;
-		// if(Object.keys(geo.weather.icons)[i] === 'partly-cloudy-day') {
-		// 	return geo.weather.icons[geo.weather.icons.keys[i]];
-		// }
+		if(Object.keys(geo.weather.icons)[i] === icon) {
+			return geo.weather.icons[Object.keys(geo.weather.icons)[i]];
+		}
 	}
-	return 'wi-day-sunny';
 };
 
 

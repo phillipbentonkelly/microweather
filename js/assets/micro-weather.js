@@ -14,7 +14,8 @@ var microWeatherObj = {};
 		'unInittedPlugins': [],
 		'independantPlugins': [],
 		'dependantPlugins': [],
-		'mappedPlugins': []
+		'mappedPlugins': [],
+		'upcomingEvents': []
 	};
 
 	MicroWeather.prototype = {
@@ -22,6 +23,8 @@ var microWeatherObj = {};
 
 		},
 		init: function( params ){
+			console.log("INIT: MicroWeather");
+
             _data.initParams = params;
             this.eventHandlers();
 
@@ -29,17 +32,17 @@ var microWeatherObj = {};
                 _data.unInittedPlugins = params.plugins;
 
                 for(var i = 0; i < _data.unInittedPlugins.length; i++){
-                    if(_data.unInittedPlugins[i].initOnPlayersReady === false){
+                    if(_data.unInittedPlugins[i].independantPlugin === true){
                         _data.independantPlugins.push(_data.unInittedPlugins[i]);
                     }else{
                         _data.dependantPlugins.push(_data.unInittedPlugins[i]);
                     }
                 }
-                thisRef.regStandAlonePlugins();
+                this.regIndependantPlugins();
             }
 		},
 		// intializes plugins not related to Brightcove players
-        regStandAlonePlugins: function(){
+        regIndependantPlugins: function(){
             for(var i = 0; i < _data.independantPlugins.length; i++){
                 this.setPlugin(_data.independantPlugins[i], 'independantPlugins');
             }
@@ -57,7 +60,6 @@ var microWeatherObj = {};
         // and in what array they belong to (player dependant or not)
         setPlugin: function( pluginObj, dataArrRef ){
             try{
-                var thisRef = this;
                 var fn = window[pluginObj.name];
                 window[pluginObj.winName] = fn();
 
