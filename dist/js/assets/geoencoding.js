@@ -98,7 +98,7 @@ geo.parseForcast = function(data) {
 	currentForcast.feelsLike = data.currently.apparentTemperature;
 	currentForcast.windSpeed = data.currently.windSpeed;
 	currentForcast.icon = geo.getWeatherIcon(data.currently.icon);
-	debugger;
+	// debugger;
 	// console.log('summary', currentForcast.summary);
 	// console.log('temp',currentForcast.temp);
 	// console.log('feels like',currentForcast.feelsLike);

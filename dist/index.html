@@ -7,15 +7,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="js/assets/google-calendar-access.js"></script>
 	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-	
+
 </head>
 <body>
 	<div id="authorize-div" style="display: none">
       <span>Authorize access to calendar</span>
       <!--Button for the user to click to initiate auth sequence -->
-      <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
+      <button id="authorize-button" onclick="handleAuthClick(event)">Authorize</button>
     </div>
     <pre id="output"></pre>
 </body>
