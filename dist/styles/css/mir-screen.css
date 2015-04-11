@@ -232,10 +232,24 @@ table {
   position: relative;
 }
 /* line 21, ../sass/partials/_calendar.scss */
+.calendar .instantweather {
+  font-family: Avenir Next;
+  text-align: center;
+}
+/* line 26, ../sass/partials/_calendar.scss */
+.calendar .temperature {
+  font-size: 30px;
+}
+/* line 30, ../sass/partials/_calendar.scss */
+.calendar h1 {
+  font-family: Avenir Next;
+  text-align: center;
+}
+/* line 35, ../sass/partials/_calendar.scss */
 .calendar .dates {
   display: inline-block;
 }
-/* line 25, ../sass/partials/_calendar.scss */
+/* line 39, ../sass/partials/_calendar.scss */
 .calendar .events {
   display: inline-block;
   color: white;
@@ -243,7 +257,7 @@ table {
   font-size: 20px;
   padding-left: 15px;
 }
-/* line 33, ../sass/partials/_calendar.scss */
+/* line 47, ../sass/partials/_calendar.scss */
 .calendar .date {
   color: white;
   font-family: Oswald Bold;
@@ -251,43 +265,82 @@ table {
   padding: 0;
   line-height: 58px;
 }
-/* line 41, ../sass/partials/_calendar.scss */
+/* line 55, ../sass/partials/_calendar.scss */
 .calendar .month {
   color: white;
   font-family: Oswald Bold;
   font-size: 20px;
 }
-/* line 47, ../sass/partials/_calendar.scss */
+/* line 61, ../sass/partials/_calendar.scss */
 .calendar .dayone {
   background-color: #0B87A1;
   color: white;
 }
-/* line 52, ../sass/partials/_calendar.scss */
+/* line 66, ../sass/partials/_calendar.scss */
 .calendar .daytwo {
   background-color: #245468;
 }
-/* line 55, ../sass/partials/_calendar.scss */
+/* line 69, ../sass/partials/_calendar.scss */
 .calendar .daythree {
   background-color: #E7C271;
 }
-/* line 58, ../sass/partials/_calendar.scss */
+/* line 72, ../sass/partials/_calendar.scss */
 .calendar .dayfour {
   background-color: #F2975D;
 }
-/* line 61, ../sass/partials/_calendar.scss */
+/* line 75, ../sass/partials/_calendar.scss */
 .calendar .dayfive {
   background-color: #EA6160;
 }
-/* line 64, ../sass/partials/_calendar.scss */
+/* line 78, ../sass/partials/_calendar.scss */
 .calendar .daysix {
   background-color: #92A8F3;
 }
-/* line 67, ../sass/partials/_calendar.scss */
+/* line 81, ../sass/partials/_calendar.scss */
 .calendar .dayseven {
   background-color: #55CD4F;
 }
 
 /* line 11, ../sass/partials/_weather.scss */
+.weather .header {
+  text-align: center;
+}
+/* line 15, ../sass/partials/_weather.scss */
 .weather h1 {
-  color: blue;
+  font-family: Avenir Next;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* line 24, ../sass/partials/_weather.scss */
+.weather .fa-arrow-circle-right, .weather .fa-arrow-circle-left {
+  display: inline-block;
+  font-size: 25px;
+}
+/* line 29, ../sass/partials/_weather.scss */
+.weather .todayweather {
+  font-family: Avenir Next;
+  text-align: center;
+}
+/* line 34, ../sass/partials/_weather.scss */
+.weather .temperature {
+  font-size: 30px;
+}
+
+/* line 11, ../sass/partials/_weatherdetail.scss */
+.weatherdetail .fa-arrow-circle-left {
+  display: inline-block;
+  font-size: 25px;
+}
+/* line 16, ../sass/partials/_weatherdetail.scss */
+.weatherdetail h1 {
+  font-family: Avenir Next;
+  display: inline-block;
+  font-size: 25px;
+}
+/* line 22, ../sass/partials/_weatherdetail.scss */
+.weatherdetail .weatherdetail {
+  font-family: Avenir Next;
 }

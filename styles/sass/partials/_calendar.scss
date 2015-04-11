@@ -18,6 +18,20 @@ $module-name: 'calendar';
 		position: relative; 
 	}
 
+	.instantweather{
+		font-family: Avenir Next;
+		text-align: center;
+	}
+
+	.temperature{
+		font-size: 30px;
+	}
+
+	h1{
+		font-family: Avenir Next;
+		text-align: center;
+	}
+
 	.dates{
 		display: inline-block;
 	}
