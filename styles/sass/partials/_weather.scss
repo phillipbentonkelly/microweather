@@ -35,6 +35,38 @@ $module-name: 'weather';
 		font-size: 30px;
 	}
 
+	.event{
+		border: 2px solid black;
+		background-color: #9DDD9A;
+		font-family: Avenir Next;
+		margin-bottom: 5px;
+		padding: 4px 10px 4px 10px;
+	}
+
+	.fa-calendar-o{
+		font-size: 15px;
+	}
+	.eventtime{
+		font-weight: bold;
+		font-size: 15px;
+		float: left;
+		width: 30%;
+	}
+
+	.eventdetail{
+		width: 70%;
+		float: left;
+	}
+
+	.eventname{
+		font-size: 15px;
+	}
+
+	.eventdescrip{
+		font-style: italic;
+		font-size: 10px;
+	}
+
 }
 
 
