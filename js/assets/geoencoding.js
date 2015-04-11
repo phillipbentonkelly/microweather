@@ -20,6 +20,7 @@ var geo = {
 		icons: {
 			'partly-cloudy-day': 'wi-day-cloudy',
 			'clear-day': 'wi-day-sunny',
+			'clear-night': 'wi-night-clear',
 			'rain': 'wi-umbrella',
 			'partly-cloudy-night': 'wi-night-cloudy',
 			'snow': 'wi-snow'
@@ -107,7 +108,7 @@ geo.parseForcast = function(data) {
 };
 
 geo.displayForcast = function(forcast) {
-	var homeTemp = $('.temperature').html(Math.floor(forcast.temp) + '&deg; F');
+	var homeTemp = $('.temperature').html(Math.floor(forcast.feelsLike) + '&deg; F');
 	var homeWeatherIcon = $('.weather-icon').addClass(forcast.icon);
 
 };
