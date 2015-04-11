@@ -1,4 +1,88 @@
-/*@import 'partials/font-face';*/
+@font-face {
+  font-family: "Avenir";
+  src: url("../../fonts/avenir.ttf") format("truetype"), url("../../fonts/avenir.otf") format("opentype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "OpenSans Regular";
+  src: url("../../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "OpenSans Italic";
+  src: url("../../fonts/OpenSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "OpenSans Bold";
+  src: url("../../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "OpenSans Extra Bold";
+  src: url("../../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "OpenSans Extra Bold Italic";
+  src: url("../../fonts/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "OpenSans Semibold";
+  src: url("../../fonts/OpenSans-Semibold.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "OpenSans Semibold Italic";
+  src: url("../../fonts/OpenSans-SemiboldItalic.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "OpenSans Light";
+  src: url("../../fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "OpenSans Light Italic";
+  src: url("../../fonts/OpenSans-LightItalic.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Oswald Regular";
+  src: url("../../fonts/Oswald-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Oswald Bold";
+  src: url("../../fonts/Oswald-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Oswald Light";
+  src: url("../../fonts/Oswald-Light.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Oswald Stencil";
+  src: url("../../fonts/Oswald-Stencil.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue.woff") format("woff"), url("../../fonts/HelveticaNeue.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Helvetica Neue Bold";
+  src: url("../../fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeue-Bold.woff") format("woff"), url("../../fonts/HelveticaNeue-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
 /* line 4, ../sass/partials/_reset.scss */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -44,7 +128,6 @@ table {
   border-spacing: 0;
 }
 
-/**/
 /* line 131, ../sass/helpers/_mixins-and-extends.scss */
 .visuallyhidden {
   border: 0;
@@ -138,3 +221,73 @@ table {
 }
 
 /**/
+/* line 11, ../sass/partials/_calendar.scss */
+.calendar .clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+/* line 17, ../sass/partials/_calendar.scss */
+.calendar .container {
+  position: relative;
+}
+/* line 21, ../sass/partials/_calendar.scss */
+.calendar .dates {
+  display: inline-block;
+}
+/* line 25, ../sass/partials/_calendar.scss */
+.calendar .events {
+  display: inline-block;
+  color: white;
+  font-family: Avenir Next;
+  font-size: 20px;
+  padding-left: 15px;
+}
+/* line 33, ../sass/partials/_calendar.scss */
+.calendar .date {
+  color: white;
+  font-family: Oswald Bold;
+  font-size: 50px;
+  padding: 0;
+  line-height: 58px;
+}
+/* line 41, ../sass/partials/_calendar.scss */
+.calendar .month {
+  color: white;
+  font-family: Oswald Bold;
+  font-size: 20px;
+}
+/* line 47, ../sass/partials/_calendar.scss */
+.calendar .dayone {
+  background-color: #0B87A1;
+  color: white;
+}
+/* line 52, ../sass/partials/_calendar.scss */
+.calendar .daytwo {
+  background-color: #245468;
+}
+/* line 55, ../sass/partials/_calendar.scss */
+.calendar .daythree {
+  background-color: #E7C271;
+}
+/* line 58, ../sass/partials/_calendar.scss */
+.calendar .dayfour {
+  background-color: #F2975D;
+}
+/* line 61, ../sass/partials/_calendar.scss */
+.calendar .dayfive {
+  background-color: #EA6160;
+}
+/* line 64, ../sass/partials/_calendar.scss */
+.calendar .daysix {
+  background-color: #92A8F3;
+}
+/* line 67, ../sass/partials/_calendar.scss */
+.calendar .dayseven {
+  background-color: #55CD4F;
+}
+
+/* line 11, ../sass/partials/_weather.scss */
+.weather h1 {
+  color: blue;
+}
