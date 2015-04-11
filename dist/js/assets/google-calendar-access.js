@@ -1,3 +1,7 @@
+// Custom Events
+var evt_fetchedCalendar = document.createEvent('Event');
+    evt_fetchedCalendar.initEvent('fetchedCalendar', true, true);
+
 // Your Client ID can be retrieved from your project in the Google
 // Developer Console, https://console.developers.google.com
 var CLIENT_ID = '535042335480-opmv90sbhuu2rjmecvg38ljjp8c5jr9g.apps.googleusercontent.com';
@@ -74,6 +78,12 @@ function listUpcomingEvents() {
 
   request.execute(function(resp) {
     var events = resp.items;
+        microWeatherObj.getObjData().upcomingEvents = resp.items;
+
+        console.log(microWeatherObj.getObjData().upcomingEvents);
+    
+    document.dispatchEvent(evt_fetchedCalendar);
+
     appendPre('Upcoming events:');
 
     if (events.length > 0) {
