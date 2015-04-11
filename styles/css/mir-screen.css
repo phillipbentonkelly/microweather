@@ -344,3 +344,7 @@ table {
 .weatherdetail .weatherdetail {
   font-family: Avenir Next;
 }
+/* line 26, ../sass/partials/_weatherdetail.scss */
+.weatherdetail .event {
+  font-family: Avenir Next;
+}
