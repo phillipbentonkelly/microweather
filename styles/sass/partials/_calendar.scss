@@ -2,12 +2,72 @@
 // * Calendar UI
 // *
 
-$module-name: 'weather';
+$module-name: 'calendar';
 
 // ------------------------------------------------------------
 // Default Styles
 // ------------------------------------------------------------
 .#{$module-name} {
+	.clearfix:after {
+	   content: " ";
+	   display: table;
+	   clear: both;
+	}
+
+	.container{
+		position: relative; 
+	}
+
+	.dates{
+		display: inline-block;
+	}
+
+	.events{
+		display: inline-block;
+		color: white;
+		font-family: Avenir Next;
+		font-size: 20px;
+		padding-left: 15px;
+	}
+
+	.date{
+		color: white;
+		font-family: Oswald Bold; 
+		font-size: 50px;
+		padding: 0;
+		line-height: 58px;
+	}
+
+	.month{
+		color: white;
+		font-family: Oswald Bold;
+		font-size: 20px;
+	}
+
+	.dayone{
+		background-color: #0B87A1;
+		color: white;
+	}
+
+	.daytwo{
+		background-color: #245468;
+	}
+	.daythree{
+		background-color: #E7C271;
+	}
+	.dayfour{
+		background-color: #F2975D;
+	}
+	.dayfive{
+		background-color: #EA6160;
+	}
+	.daysix{
+		background-color: #92A8F3;
+	}
+	.dayseven{
+		background-color: #55CD4F;;
+	}
+
 	
 }
 
