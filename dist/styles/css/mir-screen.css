@@ -328,6 +328,39 @@ table {
 .weather .temperature {
   font-size: 30px;
 }
+/* line 38, ../sass/partials/_weather.scss */
+.weather .event {
+  border: 2px solid black;
+  background-color: #9DDD9A;
+  font-family: Avenir Next;
+  margin-bottom: 5px;
+  padding: 4px 10px 4px 10px;
+}
+/* line 46, ../sass/partials/_weather.scss */
+.weather .fa-calendar-o {
+  font-size: 15px;
+}
+/* line 49, ../sass/partials/_weather.scss */
+.weather .eventtime {
+  font-weight: bold;
+  font-size: 15px;
+  float: left;
+  width: 30%;
+}
+/* line 56, ../sass/partials/_weather.scss */
+.weather .eventdetail {
+  width: 70%;
+  float: left;
+}
+/* line 61, ../sass/partials/_weather.scss */
+.weather .eventname {
+  font-size: 15px;
+}
+/* line 65, ../sass/partials/_weather.scss */
+.weather .eventdescrip {
+  font-style: italic;
+  font-size: 10px;
+}
 
 /* line 11, ../sass/partials/_weatherdetail.scss */
 .weatherdetail .fa-arrow-circle-left {
@@ -345,6 +378,6 @@ table {
   font-family: Avenir Next;
 }
 /* line 26, ../sass/partials/_weatherdetail.scss */
-.weatherdetail .event {
+.weatherdetail .events {
   font-family: Avenir Next;
 }

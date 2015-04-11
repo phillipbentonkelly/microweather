@@ -1,5 +1,5 @@
 var MicroWeather_UI = {};
-var microWeather_UI_Obj = {};
+var microWeather_ui_Obj = {};
 
 (function( win, $, undefined){
 	'use strict';
@@ -16,7 +16,7 @@ var microWeather_UI_Obj = {};
 
 		},
 		init: function(){
-			
+			console.log("INIT: MicroWeather_UI");
 		}
 	};
 })(window, jQuery);

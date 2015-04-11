@@ -8,7 +8,32 @@
 	<script src="js/assets/google-calendar-access.js"></script>
 	<script src="js/assets/geoencoding.js"></script>
 	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
-	
+
+	<script src="js/assets/micro-weather.js"></script>
+	<script src="js/assets/micro-weather_ui.js"></script>
+	<script src="js/assets/micro-weather_controller.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			microWeatherObj = MicroWeather();
+			microWeatherObj.init({
+				plugins: [
+					{
+						'name': 'MicroWeather_Controller',
+						'winName': 'microWeather_cont_Obj',
+						'independantPlugin': true,
+						'initParams': {}
+					},
+					{
+						'name': 'MicroWeather_UI',
+						'winName': 'microWeather_ui_Obj',
+						'independantPlugin': true,
+						'initParams': {}
+					}
+				]
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="authorize-div" style="display: none">
