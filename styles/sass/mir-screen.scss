@@ -17,7 +17,7 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Base SCSS
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*@import 'base';*/
+@import 'base';/**/
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Element Default Styles
@@ -29,7 +29,7 @@
 // Common Assets
 // * Dependencies: 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*@import 'helpers/common-assets';*/
+@import 'helpers/common-assets';/**/
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Page - Masthead Styles
@@ -53,7 +53,8 @@
 // Content Styles
 // * Dependencies: bdc-base
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+@import 'partials/calendar';
+@import 'partials/weather';
 
 
 
