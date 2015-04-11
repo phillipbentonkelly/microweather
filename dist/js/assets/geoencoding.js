@@ -98,12 +98,18 @@ geo.parseForcast = function(data) {
 	currentForcast.feelsLike = data.currently.apparentTemperature;
 	currentForcast.windSpeed = data.currently.windSpeed;
 	currentForcast.icon = geo.getWeatherIcon(data.currently.icon);
-	debugger;
 	// console.log('summary', currentForcast.summary);
 	// console.log('temp',currentForcast.temp);
 	// console.log('feels like',currentForcast.feelsLike);
 	// console.log('wind speed',currentForcast.windSpeed);	
 	// console.log('weather icon SHould be.....',data.currently.icon);
+	geo.displayForcast(currentForcast);
+};
+
+geo.displayForcast = function(forcast) {
+	var homeTemp = $('.temperature').html(Math.floor(forcast.temp) + '&deg; F');
+	var homeWeatherIcon = $('.weather-icon').addClass(forcast.icon);
+
 };
 
 geo.getWeatherIcon = function(icon) {
