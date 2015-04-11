@@ -84,7 +84,7 @@
           if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
               var event = events[i];
-              // debugger;
+              debugger;
               var when = event.start.dateTime;
               if (!when) {
                 when = event.start.date;
@@ -124,6 +124,6 @@
     <pre id="output"></pre>
     <input class="event-location" type="text" name="event-location"/>
     <button class="get-json">Get Some Data</button>
-    <div class="geo-hook"></div>
+    <div class="weather-hook"></div>
   </body>
 </html>
