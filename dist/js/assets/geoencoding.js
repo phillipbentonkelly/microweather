@@ -8,11 +8,21 @@ var geo = {
 			key: 'e45ac05b1efd43347562b3fa5092f397',
 			baseUrl: 'https://api.forecast.io/forecast/'
 		}
+	},
+	weather: {
+		current: {
+			summary: '',
+			temp: '',
+			feelsLike: '',
+			windSpeed: '',
+		},
+
 	}
 };
 
 $(document).ready(function() {
 	geo.eventHandlers();
+	geo.locateUser();
 });
 
 geo.eventHandlers = function() {
@@ -20,6 +30,25 @@ geo.eventHandlers = function() {
 	$('.get-json').click(function() {
 		geo.getLocation();
 	});
+};
+
+geo.locateUser = function() {
+	var wpid = navigator.geolocation.watchPosition(geo_success, geo_error, geo_options);
+};
+
+function geo_success(position) {
+	var time = Date.now();
+	geo.getForcast(position.coords.latitude, position.coords.longitude, time);
+}
+
+function geo_error() {
+	alert("Sorry, no position available.");
+}
+
+var geo_options = {
+  enableHighAccuracy: true, 
+  maximumAge        : 30000, 
+  timeout           : 27000
 };
 
 // retrieves event geolocation from address
@@ -36,9 +65,14 @@ geo.getLocation = function() {
 };
 
 // retrieves event weather info from latitude and longitude
-geo.getForcast = function(lat, lng) {
-	var reqUrl = geo.apis.forcast.baseUrl + geo.apis.forcast.key + '/' + lat + ',' + lng;
-	console.log(reqUrl);
+geo.getForcast = function(lat, lng, time) {
+	var reqUrl;
+	if(time !== 'undefined') {
+		reqUrl = geo.apis.forcast.baseUrl + geo.apis.forcast.key + '/' + lat + ',' + lng + time;
+	} else {
+		reqUrl = geo.apis.forcast.baseUrl + geo.apis.forcast.key + '/' + lat + ',' + lng;
+	}
+
 	$.ajax({
 		url: reqUrl,
 		jsonpCallback: 'geo.parseForcast',
@@ -49,6 +83,17 @@ geo.getForcast = function(lat, lng) {
 // parses event's weather data
 geo.parseForcast = function(data) {
 	console.log(data);
+	var currentForcast = geo.weather.current;
+
+	currentForcast.summary = data.currently.summary;
+	currentForcast.temp = data.currently.temperature;
+	currentForcast.feelsLike = data.currently.apparentTemperature;
+	currentForcast.windSpeed = data.currently.windSpeed;
+
+	console.log('summary', currentForcast.summary);
+	console.log('temp',currentForcast.temp);
+	console.log('feels like',currentForcast.feelsLike);
+	console.log('wind speed',currentForcast.windSpeed);	
 };
 
 
