@@ -1,0 +1,27 @@
+{
+ "name": "bowergruntsass",
+ "version": "0.0.1",
+ "authors": [
+   "Phillip B. Kelly <phillipbentonkelly@gmail.com>"
+ ],
+ "description": "learning bower, grunt, sass together",
+ "main": "index.html",
+ "keywords": [
+   "bower",
+   "grunt",
+   "sass"
+ ],
+ "license": "MIT",
+ "private": true,
+ "ignore": [
+   "**/.*",
+   "node_modules",
+   "bower_components",
+   "test",
+   "tests"
+ ],
+ "dependencies": {
+   "jquery": "1.11.1",
+   "modernizr": "~2.8.3"
+ }
+}
