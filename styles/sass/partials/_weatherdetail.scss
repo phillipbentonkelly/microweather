@@ -2,37 +2,25 @@
 // * WEATHER UI
 // *
 
-$module-name: 'weather';
+$module-name: 'weatherdetail';
 
 // ------------------------------------------------------------
 // Default Styles
 // ------------------------------------------------------------
 .#{$module-name} {
-	.header{
-		text-align: center;
+	.fa-arrow-circle-left{
+		display: inline-block;
+		font-size: 25px;
 	}
 
 	h1{
 		font-family: Avenir Next;
-		text-align: center;
 		display: inline-block;
-		font-size: 25px;
-		padding-left: 5px;
-		padding-right: 5px;
+		font-size: 25px
 	}
 
-	.fa-arrow-circle-right, .fa-arrow-circle-left{
-		display: inline-block;
-		font-size: 25px;
-	}
-
-	.todayweather{
+	.weatherdetail{
 		font-family: Avenir Next;
-		text-align: center;
-	}
-
-	.temperature{
-		font-size: 30px;
 	}
 
 }
