@@ -1,0 +1,11 @@
+<h1>Week View</h1>
+<div>
+	<ul>
+		<li ng-repeat="(day, value) in week">
+			<h2>{{ week[day].name }}<small> ( {{ week[day].events.length }} ) Items</small></h2>
+			<button ng-click="setDay(week[day].name)">
+				<a ng-href="#week/{{ week[day].name }}">View Details</a>
+			</button>
+		</li>
+	</ul>
+</div>

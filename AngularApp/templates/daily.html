@@ -1,0 +1,8 @@
+<div ng-controller="CalendarController">
+	<p><h1 ng-controller="MainController">Daily View for {{ currentDay }}</h1><span><a href="#week">view weekly</a></span></p>
+	<ul>
+		<li ng-repeat="item in week[currentDay].events">
+			<p>{{ item }}</p>
+		</li>
+	</ul>
+</div>
