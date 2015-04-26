@@ -1,22 +1,21 @@
 <!doctype html>
-<html lang="en" ng-app="microweatherApp">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Micro Weather remake</title>
   <link rel="stylesheet" href="styles/app.css">
   <!-- angularJS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+
   <!-- calendar controller -->
   <script src="js/CalendarController.js"></script>
 
 </head>
-<body ng-controller="CalendarController">
-
-	<ul>
-		<li ng-repeat="day in week">
-			<p>{{day}}</p>
-		</li>
-	</ul>
-
+<body ng-app="microweatherApp">
+	<h2>MicroWeather App</h2>
+	<div ng-controller="MainController">
+		<div ng-view></div>
+	</div>
 </body>
 </html>
