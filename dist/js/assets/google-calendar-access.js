@@ -76,26 +76,6 @@ function listUpcomingEvents() {
     'orderBy': 'startTime'
   });
 
-    // request.execute(function(resp) {
-    //     var $calendarContainer = $('.calendar');
-    //     var markup;
-        
-    //     for(var i = 0; i < resp.items.length; i++) {
-    //         // markup = ['<div class="dayone">',
-    //         //                 '<div class="dates">',
-    //         //                     '<span class="month">Apr.</span><br>',
-    //         //                     '<span class="date">12</span>',
-    //         //                 '</div>',
-    //         //                 '<div class="events">' + resp.items[i].summary + '</div>',
-    //         //             '</div>'];
-    //                     // console.log(markup);
-    //       markup = $('<div class="something">' + resp.items[i].summary + ' @ ' + Date(resp.items[i].start.dateTime).toString('dddd, MMMM ,yyyy') + '</div>');
-    //     }
-    //     // debugger;
-    //     // markup.join('');
-    //     $calendarContainer.prepend(markup);
-    // });
-
   request.execute(function(resp) {
     var events = resp.items;
         microWeatherObj.getObjData().upcomingEvents = resp.items;
