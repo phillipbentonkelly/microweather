@@ -49,128 +49,140 @@ microweatherApp.controller('CalendarController', ['$scope', 'getWeekEvents', fun
 	};
 
 	$scope.weekEvents = function() {
-		getWeekEvents();
+		console.log( getWeekEvents() );
 	};
 
 	$scope.removeItem = function(day, index) {
 		$scope.week[day].events.splice([index], 1);
-	}
+	};
 
 }]);
 
 microweatherApp.factory('getWeekEvents', function(){
 
-	return 'this is a test';
-	// Your Client ID can be retrieved from your project in the Google
-	// Developer Console, https://console.developers.google.com
+	var getWeekEvents = function() {
+		// Your Client ID can be retrieved from your project in the Google
+		// Developer Console, https://console.developers.google.com
 
-	// This quickstart only requires read-only scope, check
-	// https://developers.google.com/google-apps/calendar/auth if you want to
-	// request write scope.
+		// This quickstart only requires read-only scope, check
+		// https://developers.google.com/google-apps/calendar/auth if you want to
+		// request write scope.
+		var CLIENT_ID = '535042335480-opmv90sbhuu2rjmecvg38ljjp8c5jr9g.apps.googleusercontent.com';
+		var SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
+		var self = this;
+		// Check if current user has authorized this application.
+			
+		this.checkAuth = function() {
+			// return 'MESSAGESSS';
+			// gapi.auth.authorize({
+			// 	'client_id': this.CLIENT_ID,
+			// 	'scope': this.SCOPES,
+			// 	'immediate': true
+			// }, this.handleAuthResult);
+			// return msg;
+			self.handleAuth()
+		}
 
-	// weekEvents = {
-	// 	Client_ID: '535042335480-opmv90sbhuu2rjmecvg38ljjp8c5jr9g.apps.googleusercontent.com',
-	// 	Scopes: ['https://www.googleapis.com/auth/calendar.readonly']
-	// };
+		this.handleAuth = function() {
+			return 'Ethan is logged in';
+		}
 
-	// // Check if current user has authorized this application.
-	// weekEvents.checkAuth = function() {
-	// 	gapi.auth.authorize(
-	//     {
-	//       'client_id': CLIENT_ID,
-	//       'scope': SCOPES,
-	//       'immediate': true
-	//     }, handleAuthResult);
-	// };
+		this.checkAuth();
 
-	// // Handle response from authorization server.
-	// // @param {Object} authResult Authorization result.
-	// weekEvents.handleAuthResult = function(authResult) {
-	//   var authorizeDiv = document.getElementById('authorize-div');
-	//   if (authResult && !authResult.error) {
-	//     // Hide auth UI, then load Calendar client library.
-	//     authorizeDiv.style.display = 'none';
-	//     loadCalendarApi();
-	//   } else {
-	//     // Show auth UI, allowing the user to initiate authorization by
-	//     // clicking authorize button.
-	//     authorizeDiv.style.display = 'inline';
-	//   }
-	// };
+		// // Handle response from authorization server.
+		// // @param {Object} authResult Authorization result.
+		// handleAuthResult = function(authResult) {
+		//   var authorizeDiv = document.getElementById('authorize-div');
+		//   if (authResult && !authResult.error) {
+		//     // Hide auth UI, then load Calendar client library.
+		//     authorizeDiv.style.display = 'none';
+		//     loadCalendarApi();
+		//   } else {
+		//     // Show auth UI, allowing the user to initiate authorization by
+		//     // clicking authorize button.
+		//     authorizeDiv.style.display = 'inline';
+		//   }
+		// },
 
-	// // Initiate auth flow in response to user clicking authorize button.
-	// // @param {Event} event Button click event.
-	// weekEvents.handleAuthClick = function(event) {
-	//   gapi.auth.authorize(
-	//     {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
-	//     handleAuthResult);
-	//   return false;
-	// };
+		// // Initiate auth flow in response to user clicking authorize button.
+		// // @param {Event} event Button click event.
+		// handleAuthClick = function(event) {
+		//   gapi.auth.authorize(
+		//     {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+		//     handleAuthResult);
+		//   return false;
+		// },
 
-	// // Load Google Calendar client library. List upcoming events
-	// // once client library is loaded.
-	// weekEvents.loadCalendarApi = function() {
-	//   gapi.client.load('calendar', 'v3', listUpcomingEvents);
-	// }
+		// // Load Google Calendar client library. List upcoming events
+		// // once client library is loaded.
+		// loadCalendarApi = function() {
+		//   gapi.client.load('calendar', 'v3', listUpcomingEvents);
+		// },
 
-	// // Print the summary and start datetime/date of the next ten events in
-	// // the authorized users calendar. If no events are found an
-	// // appropriate message is printed.
-	// function listUpcomingEvents() {
-	//   var request = gapi.client.calendar.events.list({
-	//     'calendarId': 'primary',
-	//     'timeMin': (new Date()).toISOString(),
-	//     'showDeleted': false,
-	//     'singleEvents': true,
-	//     'maxResults': 20,
-	//     'orderBy': 'startTime'
-	//   });
-	//   request.execute(function(resp) {
-	//     var events = resp.items;
- //        microWeatherObj.getObjData().upcomingEvents = resp.items;
+		// // Print the summary and start datetime/date of the next ten events in
+		// // the authorized users calendar. If no events are found an
+		// // appropriate message is printed.
+		// listUpcomingEvents = function() {
+		//   var request = gapi.client.calendar.events.list({
+		//     'calendarId': 'primary',
+		//     'timeMin': (new Date()).toISOString(),
+		//     'showDeleted': false,
+		//     'singleEvents': true,
+		//     'maxResults': 20,
+		//     'orderBy': 'startTime'
+		//   });
+		//   request.execute(function(resp) {
+		//     var events = resp.items;
+	 //        microWeatherObj.getObjData().upcomingEvents = resp.items;
 
- //        console.log(microWeatherObj.getObjData().upcomingEvents);
-	    
-	//     document.dispatchEvent(evt_fetchedCalendar);
+	 //        console.log(microWeatherObj.getObjData().upcomingEvents);
+		    
+		//     document.dispatchEvent(evt_fetchedCalendar);
 
-	//     appendPre('Upcoming events:');
+		//     appendPre('Upcoming events:');
 
-	//     if (events.length > 0) {
-	// 		for (i = 0; i < events.length; i++) {
-	// 			var event = events[i];
-	// 			var when = event.start.dateTime;
-	// 			if (!when) {
-	// 				when = event.start.date;
-	// 			}
-	// 			appendPre(event.summary + ' (' + when + ')');
-	// 		}
-	// 	} else {
-	//     	appendPre('No upcoming events found.');
-	//     }
+		//     if (events.length > 0) {
+		// 		for (i = 0; i < events.length; i++) {
+		// 			var event = events[i];
+		// 			var when = event.start.dateTime;
+		// 			if (!when) {
+		// 				when = event.start.date;
+		// 			}
+		// 			appendPre(event.summary + ' (' + when + ')');
+		// 		}
+		// 	} else {
+		//     	appendPre('No upcoming events found.');
+		//     }
 
-	//   });
-	// };
+		//   });
+		// },
 
-	// // Append a pre element to the body containing the given message
-	// // as its text node.
-	// // @param {string} message Text to be placed in pre element.
-	// function appendPre(message) {
-	// 	var pre = document.getElementById('output');
-	// 	var textContent = document.createTextNode(message + '\n');
-	// 	pre.appendChild(textContent);
-	// }
+		// // Append a pre element to the body containing the given message
+		// // as its text node.
+		// // @param {string} message Text to be placed in pre element.
+		// appendPre = function(message) {
+		// 	var pre = document.getElementById('output');
+		// 	var textContent = document.createTextNode(message + '\n');
+		// 	pre.appendChild(textContent);
+		// }
+	}
 
+	return getWeekEvents;
 
 });
 
 microweatherApp.config(function($routeProvider) {
 	$routeProvider
+		.when('/login', {
+			templateUrl: 'templates/login.html',
+			controller: 'CalendarController'
+		})
 		.when('/week', {
-			templateUrl: "templates/weekly.html",
+			templateUrl: 'templates/weekly.html',
 			controller: 'CalendarController'
 		})
 		.when('/week/:day', {
-			templateUrl: "templates/daily.html",
+			templateUrl: 'templates/daily.html',
 			controller: 'CalendarController'
 		})
 		.otherwise({
